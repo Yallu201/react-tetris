@@ -1,70 +1,36 @@
-# Getting Started with Create React App
+# 테트리스 게임
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+React.js를 활용하여 구현한 테트리스 게임 입니다.
 
-## Available Scripts
+[Github Pages 링크](https://yallu201.github.io/tetris/)에서 확인할 수 있습니다.
 
-In the project directory, you can run:
+### 구현 기능
 
-### `yarn start`
+```
+1. 블록(Block)
+    - 초기 블록은 게임판(Board) 최상단 중앙에서 움직이기 시작
+    - 0.3초(300ms)마다 1칸씩 하단으로 이동
+    - 마우스 위치에 따라 하단으로 이동하며 좌,우로 수평 이동 조절 가능
+    - 마우스위치는 3가지로 분류,
+          1.블록의 왼쪽
+          2.블록의 오른쪽
+          3.블록영역
+    - 블록의 위치가 게임판 바닥 및 쌓인 블록(Stock)에 쌓였을 때,
+      해당 블록은 쌓인 블록(Stock)이 되며, 새로운 블록이 떨어지기 시작
+2. 게임판(Board)
+    - 블록이 쌓인경우, 채워진 Line을 확인하고 해당 Line을 삭제합니다.
+    - 삭제한 Line의 개수만큼 score를 올립니다.(line 1개 === 10점)
+3. 제어부(Control)
+    - 게임의 시작, 종료, 초기화를 제어합니다.
+    - 게임 초기화 시 best 점수에는 가장 높은 점수를 기록합니다.
+```
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### 사용 모듈
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```json
+"react-redux": "^7.2.5",
+"react-scripts": "4.0.3",
+"redux": "^4.1.1",
+"redux-actions": "^2.6.5",
+"redux-thunk": "^2.3.0",
+```
