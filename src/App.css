@@ -1,38 +1,60 @@
-.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
+/* App.js */
+.app {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  font-size: calc(10px + 1vmin);
   color: white;
 }
-
-.App-link {
-  color: #61dafb;
+.wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Block.jsx */
+#block {
+  position: absolute;
+}
+.block-line {
+  display: flex;
+}
+.block-line-box {
+  height: 32px;
+  width: 32px;
+  background-color: tomato;
+  border: 1px solid maroon;
+}
+
+/* Board.jsx */
+.board {
+  position: relative;
+}
+.board-line {
+  display: flex;
+}
+.board-line-box {
+  height: 32px;
+  width: 32px;
+  border: 1px solid black;
+}
+
+/* Control.jsx */
+.control {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 11px;
+}
+.control-info {
+  text-align: left;
+}
+.control-button {
+  width: 50%;
+  font-weight: bold;
+  font-size: 1.25rem;
 }
